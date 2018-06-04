@@ -83,3 +83,27 @@ img.brand-icon{
 	font-size: 13px;
 	font-weight: bold;
 }
+
+/*show页面样式*/
+aside {
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+  }
+}
+
+
+
+
+
+/*resources/views/users/shared/_user_info 样式*/
+

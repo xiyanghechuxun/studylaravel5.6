@@ -21,3 +21,6 @@ Route::get('/help','StaticPagesController@help')->name('help');		//帮助页
 Route::get('/about','StaticPagesController@about');		//关于页
 
 Route::get('/signup','UserController@create');			//注册页面
+
+//用戶資源路由
+Route::resource('users','UserController');	
