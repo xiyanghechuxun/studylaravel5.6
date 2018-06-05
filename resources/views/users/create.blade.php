@@ -12,6 +12,9 @@
 		</div>
 
 		<div class="panel-body">
+
+			@include('users.shared._errors')
+
 			<form method="POST" action="{{ url('users') }}">
 				<div class="form-group">
 					<label for="name">名称：</label>

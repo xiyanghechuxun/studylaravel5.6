@@ -9,6 +9,9 @@
 <body>
 	<!-- 引入头部文件 -->
 	@include('layouts._header')
+	
+	<!-- 引入闪存文件信息 -->
+	@include('users.shared._message')
 
 	@yield('content')
 
