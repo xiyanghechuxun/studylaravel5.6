@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -51,6 +52,9 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        //用户注册后自动登陆
+        Auth::login($users);
+
         $request->session()->flash('success','欢迎，这是一段非常奇特的旅程~');
 
         return redirect('/users');
@@ -61,7 +65,7 @@ class UserController extends Controller
     //显示用户个人信息页面
     public function show(Request $request,$id){
 
-        
+    
         $users = User::find($id);
 
 

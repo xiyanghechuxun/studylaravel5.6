@@ -3,15 +3,38 @@
 		<div class="col-md-offset-1 col-md-10">
 			<a href="{{ url('/') }}" id="logo">Sample App</a>
 			<nav>
-				<ul class="nav navbar-nav navbar-right">
-					<!-- 方法一(推荐使用) -->
-					<!-- <li><a href="{{ url('help') }}">帮助</a></li> -->
+		        <ul class="nav navbar-nav navbar-right">
+		          @if (Auth::check())
+		            <li><a href="#">用户列表</a></li>
+		            <li class="dropdown">
+		            	<a href="" class="dropdown-toggle" data-toggle="dropdown">
+							{{ Auth::user()->name }} <b class="caret"></b>
+		            	</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">编辑资料</a></li>
+							<li class="divider"></li>
+							<li>
+								<a href="#" id="logout">
+									<form action="/logout" method="post">
+										{{ csrf_field() }}
+										<input type="hidden" name="_method" value="DELETE">
+										<button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
+									</form>
+								</a>
+							</li>
+						</ul>
+		            </li>
+		          @else
+		          	<li><a href="{{ url('/help') }}">帮助</a></li>
+		          	<li><a href="{{ url('/login') }}">登陆</a></li>
+		          @endif
+		        </ul>
 
-					<!-- 方法二 route()方法，需要在路由中指定名称,如Route::get('/help','XxController@help')->name('help') -->
-					<li><a href="{{ route('help') }}">帮助</a></li>
-					<li><a href="#">登陆</a></li>
 
-				</ul>
+
+
+
 			</nav>
 		</div>
 	</div>

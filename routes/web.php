@@ -24,3 +24,15 @@ Route::get('/signup','UserController@create');			//注册页面
 
 //用戶資源路由
 Route::resource('users','UserController');	
+
+/**
+ * 登陆、退出
+ */
+//登陆页面
+Route::get('login','SessionsController@create');
+//登陆
+Route::post('login','SessionsController@store');
+//退出
+Route::delete('logout','SessionsController@destroy');
+
+

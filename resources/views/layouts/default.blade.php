@@ -5,6 +5,9 @@
 	<title>@yield('title','Sample') - Laravel学习</title>
 	<link rel="stylesheet" href="/css/app.css">
 	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- 引入头部文件 -->
