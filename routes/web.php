@@ -29,7 +29,7 @@ Route::resource('users','UserController');
  * 登陆、退出
  */
 //登陆页面
-Route::get('login','SessionsController@create');
+Route::get('login','SessionsController@create')->name('login');
 //登陆
 Route::post('login','SessionsController@store');
 //退出

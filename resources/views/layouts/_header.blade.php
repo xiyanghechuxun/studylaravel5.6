@@ -5,14 +5,14 @@
 			<nav>
 		        <ul class="nav navbar-nav navbar-right">
 		          @if (Auth::check())
-		            <li><a href="#">用户列表</a></li>
+		            <li><a href="{{ url('/users') }}">用户列表</a></li>
 		            <li class="dropdown">
 		            	<a href="" class="dropdown-toggle" data-toggle="dropdown">
 							{{ Auth::user()->name }} <b class="caret"></b>
 		            	</a>
 						<ul class="dropdown-menu">
-							<li><a href="">个人中心</a></li>
-							<li><a href="">编辑资料</a></li>
+							<li><a href="{{ url('users/' . Auth::user()->id) }}">个人中心</a></li>
+							<li><a href="{{ url('users/'.Auth::user()->id . '/edit') }}">编辑资料</a></li>
 							<li class="divider"></li>
 							<li>
 								<a href="#" id="logout">

@@ -32,7 +32,7 @@ class SessionsController extends Controller
 		if(Auth::attempt($credentials,$request->has('remember'))){
 			//登陆成功
 			$request->session()->flash('success','欢迎回来！');
-			return redirect('/users/1');
+			return redirect()->intended('/users/1');
 			
 		}else{
 			//登陆失败
@@ -46,11 +46,12 @@ class SessionsController extends Controller
 	public function destroy(Request $request){
 
 		//退出
-		// Auth::logout();
-		// $request->session()->flash('success','您已经成功退出！');
-		// return redirect('login');
-		$request->session()->flush();
-		return redirect('/login');	
+		Auth::logout();
+		$request->session()->flash('success','您已经成功退出！');
+		return redirect('login');
+		// $request->session()->flush();
+		// $request->session()->flush();
+		// return redirect('/login');	
 	}
 
 }
